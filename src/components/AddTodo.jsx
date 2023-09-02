@@ -43,6 +43,7 @@ function AddTodo() {
       </TextField.Root>
       <IconButton
         size="3"
+        style={{ cursor: "pointer" }}
         onClick={() => {
           addTodo({
             variables: {
