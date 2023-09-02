@@ -2,14 +2,7 @@ import { useRef } from "react";
 import { useMutation } from "@apollo/client";
 import { PlusIcon } from "@radix-ui/react-icons";
 
-import {
-  Flex,
-  Box,
-  Text,
-  IconButton,
-  TextField,
-  Button,
-} from "@radix-ui/themes";
+import { Flex, IconButton, TextField } from "@radix-ui/themes";
 import { GET_TODOS, ADD_TODO } from "../graphql";
 
 function AddTodo() {
@@ -51,6 +44,8 @@ function AddTodo() {
                 description: input.current.value,
               },
             },
+          }).then(() => {
+            input.current.value = "";
           });
         }}
       >

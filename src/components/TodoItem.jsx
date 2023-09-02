@@ -4,7 +4,7 @@ import { Flex, Text, TextField, Checkbox, IconButton } from "@radix-ui/themes";
 import { Cross1Icon } from "@radix-ui/react-icons";
 
 import { formatDateToCustomFormat } from "../utils";
-import { EDIT_TODO, DELETE_TODO } from "../graphql";
+import { EDIT_TODO, DELETE_TODO, GET_TODOS } from "../graphql";
 
 function TodoItem({ node }) {
   const { id, __typename, ...todo } = node;
@@ -15,8 +15,9 @@ function TodoItem({ node }) {
   const inputRef = useRef(null);
 
   const [editTodo] = useMutation(EDIT_TODO);
-  const [deleteTodo] = useMutation(DELETE_TODO);
-
+  const [deleteTodo] = useMutation(DELETE_TODO, {
+    refetchQueries: [{ query: GET_TODOS }],
+  });
   useEffect(() => {
     if (isEditing) {
       inputRef.current.focus();
