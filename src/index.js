@@ -4,7 +4,7 @@ import {
   ApolloClient,
   createHttpLink,
   ApolloProvider,
-  InMemoryCache
+  InMemoryCache,
 } from "@apollo/client";
 import { Theme } from "@radix-ui/themes";
 
@@ -17,13 +17,13 @@ const ANON_KEY =
 const httpLink = createHttpLink({
   uri: GRAPHQL_ENDPOINT,
   headers: {
-    apikey: ANON_KEY
-  }
+    apikey: ANON_KEY,
+  },
 });
 
 const client = new ApolloClient({
   link: httpLink,
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 });
 
 const rootElement = document.getElementById("root");
@@ -32,7 +32,7 @@ const root = createRoot(rootElement);
 root.render(
   <StrictMode>
     <ApolloProvider client={client}>
-      <Theme>
+      <Theme appearance="light" accentColor="amber" grayColor="olive">
         <App />
       </Theme>
     </ApolloProvider>

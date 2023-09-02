@@ -7,6 +7,7 @@ export const GET_TODOS = gql`
         node {
           id
           description
+          checked
         }
       }
     }
@@ -14,24 +15,26 @@ export const GET_TODOS = gql`
 `;
 
 export const ADD_TODO = gql`
-  mutation($todo: TodosInsertInput!) {
+  mutation ($todo: TodosInsertInput!) {
     insertIntoTodosCollection(objects: [$todo]) {
       affectedCount
       records {
         id
         description
+        checked
       }
     }
   }
 `;
 
 export const EDIT_TODO = gql`
-  mutation($todo: TodosInsertInput!) {
+  mutation ($todo: TodosInsertInput!) {
     updateTodosCollection(set: $todo) {
       affectedCount
       records {
         id
         description
+        checked
       }
     }
   }
