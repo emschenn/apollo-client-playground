@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import "@radix-ui/themes/styles.css";
 import {
   Flex,
@@ -20,9 +20,17 @@ function App() {
 
   if (error) return <p>Error : {error.message}</p>;
 
-  const todos = data?.todosCollection?.edges ?? [];
+  const todos = data?.todosCollection?.edges
+    ? [...data?.todosCollection?.edges].sort((a, b) => {
+        if (a.node.checked === b.node.checked) {
+          const dateA = new Date(a.node.created_at);
+          const dateB = new Date(b.node.created_at);
+          return dateB - dateA;
+        }
+        return a.node.checked ? 1 : -1;
+      })
+    : [];
 
-  console.log(todos);
   return (
     <Flex
       px="9"
