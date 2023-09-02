@@ -39,7 +39,7 @@ function AddTodo() {
   return (
     <Flex width="100%" gap="2" grow="1">
       <TextField.Root style={{ width: "100%" }} size="3">
-        <TextField.Input ref={input} placeholder="Enter here" />
+        <TextField.Input ref={input} placeholder="Enter your task here..." />
       </TextField.Root>
       <IconButton
         size="3"

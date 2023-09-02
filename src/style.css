@@ -1,0 +1,21 @@
+body {
+  /* background-color: var(--yellow-10);
+  background-image: radial-gradient(
+      at 15% 48%,
+      var(--tomato-9) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 3% 50%, var(--yellow-10) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, var(--blue-10) 0px, transparent 40%),
+    radial-gradient(at 28% 45%, var(--grass-10) 0px, transparent 50%); */
+
+  background-color: var(--cyan-4);
+  background-image: radial-gradient(
+      at 62% 36%,
+      var(--amber-9) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 36% 53%, var(--yellow-7) 0px, transparent 50%),
+    radial-gradient(at 5% 85%, var(--cyan-2) 0px, transparent 50%),
+    radial-gradient(at 94% 95%, var(--teal-7) 0px, transparent 50%);
+}

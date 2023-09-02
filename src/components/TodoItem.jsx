@@ -13,7 +13,7 @@ function TodoItem({ node }) {
         <label>
           <Checkbox
             defaultChecked={node.checked}
-            color={node.checked ? "indigo" : "blue"}
+            color="teal"
             mr="1"
             size="2"
           />{" "}

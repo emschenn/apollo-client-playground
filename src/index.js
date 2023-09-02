@@ -32,7 +32,7 @@ const root = createRoot(rootElement);
 root.render(
   <StrictMode>
     <ApolloProvider client={client}>
-      <Theme appearance="light" accentColor="amber" grayColor="olive">
+      <Theme appearance="light" accentColor="tomato" grayColor="olive">
         <App />
       </Theme>
     </ApolloProvider>
