@@ -1,0 +1,48 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.guess-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.guess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.guess-char {
+  border: 1px solid #000;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+
+  &.not-exist {
+    background-color: LightGray;
+  }
+
+  &.exist {
+    background-color: PaleGoldenRod;
+  }
+
+  &.matched {
+    background-color: LightGreen;
+  }
+}
+
+h2 {
+  margin: 0;
+}
